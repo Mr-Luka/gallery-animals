@@ -2,6 +2,7 @@ function Gallery (gallery) {
     if(!gallery) {
         throw new Error("No gallery found!");
     }
+    // Selecting elements that I need
     const images = Array.from(gallery.querySelectorAll("img"));
     const modal = document.querySelector(".modal");
     const prevButton = modal.querySelector(".prev");
@@ -57,8 +58,9 @@ function openModal () {
         openModal();
 
     }
-
+// Event Listeners
     images.forEach(image=> image.addEventListener("click", (e)=> showImage(e.currentTarget)))
+   //Looping over each image
     images.forEach(image=> image.addEventListener("keyup", e=> {
         if(e.key === "Enter"){
             showImage(e.currentTarget)
